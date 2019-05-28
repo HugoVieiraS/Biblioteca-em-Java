@@ -16,7 +16,6 @@ public class Menu {
 			System.out.println("                  |     5 - Apresentar todos os livros |");
 			System.out.println("                  |     0 - Fechar o sistema           |");
 			System.out.println("                   ====================================\n");
-			System.out.print("                  Escolha uma opção                        ");
 			System.out.print("\n");
 
 /////////////INSTANCIANDO OS METODOS /////////////////////
@@ -27,8 +26,9 @@ public class Menu {
 		
 		
 			do {
+				System.out.print("Escolha uma opção: ");
 			switch (opcao.nextInt()) {
-			case 1:
+			case 1: ///// OPCAO FUNCIONANDO
 				System.out.println("Digite o nome do Livro: ");
 				nomeLivro = opcao.next();
 				System.out.print("Digite o autor: ");
@@ -40,7 +40,7 @@ public class Menu {
 			case 2:
 				System.out.println("Alugar livro");
 				break;
-			case 3:
+			case 3:///// OPCAO FUNCIONANDO
 				System.out.println("Digite o nome do livro que deseja retirar: ");
 				nomeLivro = opcao.next();
 				livros.removerLivro(nomeLivro);
@@ -48,20 +48,21 @@ public class Menu {
 			case 4:
 				livros.devolverLivro();
 				break;
-			case 5:
-				System.out.print("Digite o nome do livro que deseja buscar: ");
-                nomeLivro=opcao.next();
-                livros.apresentarLivro(nomeLivro);
+			case 5:///// OPCAO FUNCIONANDO
+				System.out.print("Livros cadastrados ");
+				livros.apresentarLivro();
+                
                 break;
-			case 0:
-				continuar=false; 
+			case 0:///// OPCAO FUNCIONANDO
+				continuar = true; 
 				break;
 			default:
 				System.out.println("Opção Inválida!");
 				break;
 				
 			}
-		} while (continuar=true);
+		} while (continuar = false);
 	}
+
 	
 }

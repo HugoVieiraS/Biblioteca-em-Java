@@ -47,20 +47,10 @@ public class Biblioteca {
 
 	}
 
-////////// METODO PARA APRESENTAR TODOS OS LIVROS DO SISTEMA/////////////
-	public void retornaLista() {
-		for (int i = 0; i < livros.size(); i++) {
-			System.out.println(livros.get(i).getNomeLivro());
-		}
-	}
-
 //////////METODO PARA APRESENTAR TODOS OS LIVROS DO SISTEMA/////////////
-	public Livros apresentarLivro(String titulo) {
-		for (int i = 0; i < livros.size(); i++) {
-			if (livros.get(i).getNomeLivro().equals(titulo))
-				return livros.get(i);
+	public void apresentarLivro() {
+		for (Livros a : livros) { 
+			System.out.println(a);
 		}
-		return null;
 	}
-
 }
