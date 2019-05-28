@@ -28,14 +28,14 @@ public class Menu {
 		
 		
 			do {
-			switch (sc.nextInt(opcao)) {
+			switch (opcao = sc.nextInt()) {
 			case 1:
 				System.out.println("Digite o nome do Livro: ");
-				sc.next(nomeLivro);
+				nomeLivro = sc.next();
 				System.out.print("Digite o autor: ");
-                sc.next(autor);
+				autor  = sc.next();
                 System.out.print("Digite a editora: ");
-                sc.next(editora);
+                editora = sc.next();
                 livros.adicionarLivro(nomeLivro, autor, editora, StatusLivro.DISPONIVEL);
 				break;
 			case 2:
