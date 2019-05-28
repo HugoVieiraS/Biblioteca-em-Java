@@ -7,11 +7,7 @@ import java.util.Scanner;
 public class Menu {
 
 	public static void main (String[] args) {
-		Biblioteca biblioteca = new Biblioteca(null, null, null, null);
-		Scanner sc = new Scanner(System.in);
-		
-		Integer opcao;
-		do {
+////////// UTILIZANDO O DO WHILE PARA FAZER O MENU E EXECUTAR////////////////////////
 			
 			System.out.println("\n\n### Sistema de Controle de Biblioteca ###");
 			System.out.println("\n                    ====================================");
@@ -22,23 +18,37 @@ public class Menu {
 			System.out.println("                  |     5 - Apresentar todos os livros |");
 			System.out.println("                  |     0 - Fechar o sistema           |");
 			System.out.println("                   ====================================\n");
-			opcao = sc.nextInt();
 			System.out.print("\n");
-			switch (opcao) {
+
+/////////////INSTANCIANDO OS METODOS /////////////////////
+		Biblioteca livros = new Biblioteca();
+		Scanner sc = new Scanner(System.in);
+		Integer opcao = null;
+		String nomeLivro, autor, editora;
+		
+		
+			do {
+			switch (sc.nextInt(opcao)) {
 			case 1:
-				biblioteca.adicionarLivro("Gelo e Fogo", "HBO", "G.R Martin", StatusLivro.DISPONIVEL);
+				System.out.println("Digite o nome do Livro: ");
+				sc.next(nomeLivro);
+				System.out.print("Digite o autor: ");
+                sc.next(autor);
+                System.out.print("Digite a editora: ");
+                sc.next(editora);
+                livros.adicionarLivro(nomeLivro, autor, editora, StatusLivro.DISPONIVEL);
 				break;
 			case 2:
-				biblioteca.alugarLivro();
+				livros.alugarLivro();
 				break;
 			case 3:
-				biblioteca.removerLivro();
+				/*livros.removerLivro("Branca de neve");*/
 				break;
 			case 4:
-				biblioteca.devolverLivro();
+				livros.devolverLivro();
 				break;
 			case 5:
-				biblioteca.apresentarLivro();
+				livros.apresentarLivro(null);
 				break;
 			case 0:
 				break;
