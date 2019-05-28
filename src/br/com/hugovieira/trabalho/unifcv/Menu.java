@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Menu {
 
 	public static void main (String[] args) {
-		Biblioteca biblioteca = new Biblioteca();
+		Biblioteca biblioteca = new Biblioteca(null, null, null, null);
 		Scanner sc = new Scanner(System.in);
 		
 		Integer opcao;
@@ -26,7 +26,7 @@ public class Menu {
 			System.out.print("\n");
 			switch (opcao) {
 			case 1:
-				biblioteca.adicionarLivro();
+				biblioteca.adicionarLivro("Gelo e Fogo", "HBO", "G.R Martin", StatusLivro.DISPONIVEL);
 				break;
 			case 2:
 				biblioteca.alugarLivro();

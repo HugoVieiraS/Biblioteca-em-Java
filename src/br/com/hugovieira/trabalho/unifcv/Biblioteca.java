@@ -3,18 +3,29 @@ package br.com.hugovieira.trabalho.unifcv;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class Biblioteca {
 	private String nomeLivro;
 	private String editora;
-	private String autor;
+	private ArrayList<String> autor;
 	private StatusLivro status;
 
-	public void adicionarLivro() {
-		System.out.println("Adicionar Livro");
-		
+	public Biblioteca(String nomeLivro, String editora, String autor, StatusLivro status) {
+		this.nomeLivro = nomeLivro;
+		this.autor = new ArrayList<String>();
+		this.autor.add(autor);
+		this.editora = editora;
 	}
+
+	List<Biblioteca> livros = new ArrayList<>();
+
+	public void add(Biblioteca livro){
+		   livros.add(livro); }  
+
+	public void adicionarLivro(String nomeLivro, String editora, String autor, StatusLivro status) {
+		Biblioteca livros = new Biblioteca(nomeLivro, autor, editora, status);
+		livros.add(livros);
+	}
+
 
 	public void alugarLivro() {
 		System.out.println("Alugar livro");
@@ -52,11 +63,11 @@ public class Biblioteca {
 		this.editora = editora;
 	}
 
-	public String getAutor() {
+	public ArrayList getAutor() {
 		return autor;
 	}
 
-	public void setAutor(String autor) {
+	public void setAutor(ArrayList autor) {
 		this.autor = autor;
 	}
 
@@ -67,5 +78,4 @@ public class Biblioteca {
 	public void setStatus(StatusLivro status) {
 		this.status = status;
 	}
-
 }
