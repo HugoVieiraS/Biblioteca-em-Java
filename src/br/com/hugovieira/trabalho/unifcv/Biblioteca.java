@@ -3,30 +3,27 @@ package br.com.hugovieira.trabalho.unifcv;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Biblioteca{
-///////////////FAZENDO UMA LISTA DA CLASSE BIBLIOTECA E A NOMEANDO COMO LIVROS/////////////////////////
+public class Biblioteca {
+///////////////FAZENDO UMA LISTA DA CLASSE LIVROS/////////////////////////
 	List<Livros> livros = new ArrayList<>();
-	
+
 	public Biblioteca() {
-		
 	}
 
+///////////// METODO ADICIONAR LIVROS////////////
+	public void adicionarLivros(String nomeLivro, String editora, String autor) {
+		Livros livro = new Livros(nomeLivro, editora, autor);
+		livros.add(livro);
+	}
 
-//////////////MÉTODO PARA ADICIONAR LIVROS, PASSANDO OS PARAMETROS DO QUE É NECESSÁRIOE USANDO O METODO ADD //////////////
-	public void adicionarLivro(String nomeLivro, String editora, String autor, StatusLivro status) {
-		Livros livros = new Livros(nomeLivro, autor, editora, status);
-		livros.add(livros);
+	public void adicionarLivros(Livros livro) {
+		livros.add(livro);
 	}
 
 ///////////////MÉTODO PARA ALUGAR LIVRO DA BIBLIOTECA ////////////////////////////
 	public void alugarLivro() {
 		System.out.println("Alugar livro");
 
-	}
-
-//////////////////METODO "REMOVER"/////////////////////////
-	public void remover(Livros livro) {
-		livros.remove(livro);
 	}
 
 ////////////////METODO PARA REMOVER LIVRO DA BIBLIOTECA, USANDO O METODO REMOVER //////////////////////////
@@ -37,6 +34,11 @@ public class Biblioteca{
 			else
 				System.out.println("Livro não encontrado");
 		}
+	}
+
+//////////////////METODO "REMOVER"/////////////////////////
+	public void removerLivro(Livros livro) {
+		livros.remove(livro);
 	}
 
 //////////METODO PARA DEVOLVER LIVROS A BIBLIOTECA ////////////////////////////

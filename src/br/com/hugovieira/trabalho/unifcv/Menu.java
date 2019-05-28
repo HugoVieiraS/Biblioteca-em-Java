@@ -2,8 +2,6 @@ package br.com.hugovieira.trabalho.unifcv;
 
 import java.util.Scanner;
 
-
-
 public class Menu {
 
 	public static void main (String[] args) {
@@ -18,47 +16,52 @@ public class Menu {
 			System.out.println("                  |     5 - Apresentar todos os livros |");
 			System.out.println("                  |     0 - Fechar o sistema           |");
 			System.out.println("                   ====================================\n");
+			System.out.print("                  Escolha uma opção                        ");
 			System.out.print("\n");
 
 /////////////INSTANCIANDO OS METODOS /////////////////////
 		Biblioteca livros = new Biblioteca();
-		Scanner sc = new Scanner(System.in);
-		Integer opcao = null;
+		Scanner opcao = new Scanner(System.in);
+		boolean continuar = true;
 		String nomeLivro, autor, editora;
 		
 		
 			do {
-			switch (opcao = sc.nextInt()) {
+			switch (opcao.nextInt()) {
 			case 1:
 				System.out.println("Digite o nome do Livro: ");
-				nomeLivro = sc.next();
+				nomeLivro = opcao.next();
 				System.out.print("Digite o autor: ");
-				autor  = sc.next();
+				autor  = opcao.next();
                 System.out.print("Digite a editora: ");
-                editora = sc.next();
-                livros.adicionarLivro(nomeLivro, autor, editora, StatusLivro.DISPONIVEL);
+                editora = opcao.next();
+                livros.adicionarLivros(nomeLivro, autor, editora);
 				break;
 			case 2:
-				livros.alugarLivro();
+				System.out.println("Alugar livro");
 				break;
 			case 3:
-				/*livros.removerLivro("Branca de neve");*/
+				System.out.println("Digite o nome do livro que deseja retirar: ");
+				nomeLivro = opcao.next();
+				livros.removerLivro(nomeLivro);
 				break;
 			case 4:
 				livros.devolverLivro();
 				break;
 			case 5:
-				livros.apresentarLivro(null);
-				break;
+				System.out.print("Digite o nome do livro que deseja buscar: ");
+                nomeLivro=opcao.next();
+                livros.apresentarLivro(nomeLivro);
+                break;
 			case 0:
+				continuar=false; 
 				break;
 			default:
 				System.out.println("Opção Inválida!");
 				break;
 				
 			}
-		} while (opcao != 0);
-		sc.close();
+		} while (continuar=true);
 	}
 	
 }

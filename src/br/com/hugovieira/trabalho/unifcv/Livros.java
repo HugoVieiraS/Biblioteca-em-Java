@@ -8,7 +8,7 @@ public class Livros {
 		private ArrayList<String> autor;
 		private StatusLivro status;
 		
-		public Livros(String nomeLivro, String editora, String autor, StatusLivro status) {
+		public Livros(String nomeLivro, String editora, String autor) {
 			this.nomeLivro = nomeLivro;
 			this.autor = new ArrayList<String>();
 			this.autor.add(autor);
@@ -40,9 +40,6 @@ public class Livros {
 			this.status = status;
 		}
 
-		public void add(Livros livro) {
-			livro.add(livro);
-		}
 
 	}
 
