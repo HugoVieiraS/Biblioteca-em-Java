@@ -2,4 +2,7 @@
 <h2> Sistema de biblioteca em Java </h2>
 
 
-<h4>Sistema de gerenciamento de uma biblioteca, escrito na linguagem Java.</h4> 
+<h4>Sistema de gerenciamento de uma biblioteca, escrito na linguagem Java.</h4>
+
+
+<h4> Hugo V.</h4>
