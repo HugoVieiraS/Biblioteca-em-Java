@@ -64,7 +64,7 @@ public class Menu {
 				break;
 
 			case 0:///// OPCAO FUNCIONANDO
-				continuar = false;
+				System.exit(0);
 				break;
 
 			default:

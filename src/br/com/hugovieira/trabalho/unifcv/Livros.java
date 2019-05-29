@@ -5,7 +5,7 @@ public class Livros {
 	private String editora;
 	private String autor;
 	private Status status;
-	boolean alugado = true;
+	boolean Alugado;
 
 	public Livros(String nomeLivro, String editora, String autor) {
 		this.nomeLivro = nomeLivro;

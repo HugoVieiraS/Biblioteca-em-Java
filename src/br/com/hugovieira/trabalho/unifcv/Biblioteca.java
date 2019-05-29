@@ -24,11 +24,14 @@ public class Biblioteca {
 
 ///////////////MÉTODO PARA ALUGAR LIVRO DA BIBLIOTECA ////////////////////////////
 	public void alugarLivro(String nomeLivro) {
-	for (Livros a: livros) {
-		if(a.getNomeLivro().equals(nomeLivro) && a.alugado) {
-			a.alugado = true;
-			System.out.println("Livro Alugado");
-		} else {
+	for (Livros a: this.livros) {
+		if (a.getNomeLivro().equals(nomeLivro) && !a.Alugado) {
+			a.Alugado = true;
+			System.out.println("---------------------------------------------------------------------------------");
+			System.out.println("livro " + a.getNomeLivro()+ " alugado com sucesso!!");
+			System.out.println("---------------------------------------------------------------------------------");
+			return;
+		}else {
 			System.out.println("Livro não encontrado");
 		}
 	}
@@ -61,8 +64,8 @@ public class Biblioteca {
 //////////METODO PARA DEVOLVER LIVROS A BIBLIOTECA ////////////////////////////
 	public void devolverLivro(String nomeLivro) {
 		for (Livros a: livros) {
-			if(a.getNomeLivro().equals(nomeLivro) && a.alugado) {
-				a.alugado = false;
+			if(a.getNomeLivro().equals(nomeLivro) && a.Alugado) {
+				a.Alugado = false;
 				System.out.println("Livro devolvido");
 			} else {
 				System.out.println("Livro não encontrado");
