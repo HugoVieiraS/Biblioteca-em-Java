@@ -7,5 +7,13 @@ public class Validacao {
 			throw new RuntimeException("Campo " + field +" é obrigatorio");
 		}
 	}
+	
+	public void alugado(boolean alugado) {
+		if (alugado == true) {
+			System.out.println("Livro alugado");
+		}else {
+			System.out.println("Livro disponivel");
+		}
+	}
 
 }
